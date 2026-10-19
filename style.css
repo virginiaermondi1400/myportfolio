@@ -549,3 +549,33 @@ body{background:var(--bg)}.about{background:#15100d}.project{background:#19130f;
   color: #ffe2bf;
 }
 .project-body .role { overflow-wrap: break-word; }
+
+
+/* Recruiter polish — calm, consistent project cards */
+.projects { align-items: stretch; }
+.project { display: flex; flex-direction: column; }
+.project .visual { flex: 0 0 auto; }
+.project-body { flex: 1; display: flex; flex-direction: column; }
+.project-body h3 { line-height: 1.22; letter-spacing: -.035em; }
+.project-body .summary {
+  margin-top: 12px;
+  margin-bottom: 0;
+  min-height: 0;
+  max-width: 48ch;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: .005em;
+  color: #d8c4b0;
+  text-wrap: pretty;
+}
+.project .tech { margin-top: 17px; font-size: 12px; line-height: 1.6; }
+.project .role-label { margin-top: 20px; padding-top: 16px; }
+.project .role { margin-top: 0; font-size: 13px; line-height: 1.8; }
+.project-links { margin-top: auto; padding-top: 22px; }
+.project-links a { text-decoration: none; border-bottom: 1px solid rgba(231,186,145,.35); padding-bottom: 3px; }
+.project-links a:hover,.project-links a:focus-visible { color: #ffe2bf; border-bottom-color: currentColor; }
+@media(max-width:750px) {
+  .project-body .summary { font-size: 14px; line-height: 1.65; max-width: none; }
+  .project-body h3 { line-height: 1.25; }
+}
