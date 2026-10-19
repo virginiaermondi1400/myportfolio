@@ -579,3 +579,8 @@ body{background:var(--bg)}.about{background:#15100d}.project{background:#19130f;
   .project-body .summary { font-size: 14px; line-height: 1.65; max-width: none; }
   .project-body h3 { line-height: 1.25; }
 }
+
+/* Project timeline metadata */
+.project-date{margin:8px 0 0;color:#bea68f;font-size:12px;line-height:1.5;letter-spacing:.025em;font-weight:400}
+.project-origin+.project-date{margin-top:9px}
+.project-date+.project-body h3{margin-top:12px}
