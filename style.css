@@ -584,3 +584,10 @@ body{background:var(--bg)}.about{background:#15100d}.project{background:#19130f;
 .project-date{margin:8px 0 0;color:#bea68f;font-size:12px;line-height:1.5;letter-spacing:.025em;font-weight:400}
 .project-origin+.project-date{margin-top:9px}
 .project-date+.project-body h3{margin-top:12px}
+
+/* Personal vision: editorial highlight */
+.about-manifesto{font-size:clamp(18px,1.9vw,23px);line-height:1.65;color:#f2dfcb;font-weight:450;letter-spacing:-.015em}
+.about-education{margin:24px 0 22px;padding:4px 0 0;border-top:1px solid rgba(215,174,135,.2)}
+.about-education .role-label{margin-top:18px;border:0;padding:0}
+.about-education p{font-size:13px;line-height:1.8;color:#cfb9a7}
+@media(max-width:750px){.about-manifesto{font-size:18px;line-height:1.65}}
