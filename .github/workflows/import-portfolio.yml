@@ -1,0 +1,33 @@
+name: Import existing portfolio
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/import-portfolio.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Copy public portfolio from previous repository
+        run: |
+          git clone --depth 1 https://github.com/c-est-la-v/Portfoliov2.git "$RUNNER_TEMP/old-portfolio"
+          rsync -a --exclude='.git' --exclude='README.md' "$RUNNER_TEMP/old-portfolio/" ./
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html style.css script.js assets media
+          if ! git diff --cached --quiet; then
+            git commit -m "Import public portfolio website and available media"
+            git push
+          fi
+      - name: Report missing videos
+        run: |
+          for f in haccp.mp4 kv62.mp4 tale-of-contour.mp4 mindfulness.mp4; do
+            if [ ! -f "media/$f" ]; then echo "::warning::media/$f needs to be uploaded before publishing"; fi
+          done
