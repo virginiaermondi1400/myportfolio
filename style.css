@@ -591,3 +591,16 @@ body{background:var(--bg)}.about{background:#15100d}.project{background:#19130f;
 .about-education .role-label{margin-top:18px;border:0;padding:0}
 .about-education p{font-size:13px;line-height:1.8;color:#cfb9a7}
 @media(max-width:750px){.about-manifesto{font-size:18px;line-height:1.65}}
+
+/* Final editorial contact styling */
+.about-grid h2 { max-width: 14ch; text-wrap: balance; }
+.about-grid > div:last-child > p { margin-bottom: 20px; }
+.about-manifesto { font-size: clamp(18px,1.65vw,21px); line-height:1.72; font-weight:400; }
+.contact.wrap { padding-top: 82px; padding-bottom: 105px; }
+.contact h2 { font-size: clamp(32px,4vw,48px); font-weight:500; margin:16px 0 12px; }
+.contact .contact-intro { max-width: 54ch; font-size:14px; line-height:1.7; color:#cbb8a8; margin:0 0 24px; }
+.contact-methods { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.contact-method { display:inline-flex; align-items:center; gap:10px; padding:11px 16px; border-radius:10px; border:1px solid rgba(224,186,150,.25); color:#ead9c7; font-size:13px; font-weight:450; line-height:1.2; text-decoration:none; background:rgba(255,255,255,.018); transition:color .2s,border-color .2s,background .2s; }
+.contact-method svg { flex:none; color:#d4aa88; }
+.contact-method:hover,.contact-method:focus-visible { color:#fff5e8; border-color:rgba(224,186,150,.7); background:rgba(224,186,150,.07); }
+@media (max-width:750px) { .contact.wrap {padding-top:65px;padding-bottom:85px;} .contact-method {padding:11px 14px;} .about-grid h2{max-width:none;} }
