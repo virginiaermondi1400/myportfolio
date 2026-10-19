@@ -533,3 +533,19 @@ body{background:var(--bg)}.about{background:#15100d}.project{background:#19130f;
 .project-links:empty {display:none}
 .nav .wordmark {letter-spacing:-.04em}
 @media (max-width:750px){.section-heading{gap:14px}.project-body .summary{font-size:16px}.project .role{font-size:13px}}
+
+/* Consistent project-card rhythm */
+@media (min-width: 751px) {
+  .project-body .summary { min-height: 3.1em; max-width: 46ch; }
+}
+.project-links a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(231,186,145,.35);
+  padding-bottom: 3px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.project-links a:hover, .project-links a:focus-visible {
+  border-bottom-color: currentColor;
+  color: #ffe2bf;
+}
+.project-body .role { overflow-wrap: break-word; }
