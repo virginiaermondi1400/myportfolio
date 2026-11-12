@@ -604,3 +604,18 @@ body{background:var(--bg)}.about{background:#15100d}.project{background:#19130f;
 .contact-method svg { flex:none; color:#d4aa88; }
 .contact-method:hover,.contact-method:focus-visible { color:#fff5e8; border-color:rgba(224,186,150,.7); background:rgba(224,186,150,.07); }
 @media (max-width:750px) { .contact.wrap {padding-top:65px;padding-bottom:85px;} .contact-method {padding:11px 14px;} .about-grid h2{max-width:none;} }
+
+/* Focused project browsing, preserving the existing visual identity. */
+.project-details { margin-top: 20px; }
+.project-details > .role-label { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0; padding: 16px 0; cursor: pointer; line-height: 1.5; list-style: none; }
+.project-details > summary::-webkit-details-marker { display: none; }
+.project-details > summary::after { content: '+'; flex: none; font-size: 22px; font-weight: 400; color: var(--accent); }
+.project-details[open] > summary::after { content: '\2212'; }
+.project-details[open] > summary { padding-bottom: 12px; }
+.project-details .role { margin-bottom: 0; }
+.project-details > summary:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.project-details > summary:hover { color: #ffe2bf; }
+#work { scroll-margin-top: 24px; }
+.project[id] { scroll-margin-top: 24px; }
+.video-project.is-playing .video-badge { display: none; }
+@media (prefers-reduced-motion: reduce) { .hero-image { animation: none !important; } .inline-player { animation: none !important; } }

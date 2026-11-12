@@ -30,6 +30,7 @@ document.querySelectorAll(".filter").forEach((button) => {
     document.querySelectorAll(".filter").forEach((b) => b.classList.toggle("active", b === button));
     document.querySelectorAll(".project").forEach((card) => {
       card.hidden = button.dataset.filter !== "all" && !card.dataset.cat.includes(button.dataset.filter);
+      if (card.hidden) stopInlineVideo(card);
     });
   });
 });
