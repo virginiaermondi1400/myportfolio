@@ -623,7 +623,7 @@ body{background:var(--bg)}.about{background:#15100d}.project{background:#19130f;
 /* Editorial redesign */
 :root{color-scheme:light;--bg:#eee9df;--panel:#eee9df;--line:#c8bfb0;--ink:#302a23;--muted:#62594e;--accent:#75654e;--serif:'Libre Caslon Display',Georgia,serif}
 body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}
-.wrap{width:min(1240px,calc(100% - 96px))}
+.wrap{width:min(1200px,calc(100% - 112px))}
 .nav{height:94px;border-color:var(--line)}
 .nav .wordmark{font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:-.02em;color:var(--ink)}
 .nav nav a,#lang{color:var(--ink);font-size:11px;text-transform:uppercase;letter-spacing:.13em}
@@ -733,7 +733,7 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 @media (max-width: 750px) {
   .wrap {
     width: auto;
-    margin-inline: max(18px, env(safe-area-inset-left)) max(18px, env(safe-area-inset-right));
+    margin-inline: max(20px, env(safe-area-inset-left)) max(20px, env(safe-area-inset-right));
   }
 
   .nav {
@@ -1193,6 +1193,58 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
   border-color: currentColor;
 }
 
+:root {
+  --sage-wash: #e2e7dd;
+  --sage-ink: #425649;
+  --sage-line: #9ba799;
+}
+
+#work.section {
+  padding-top: 65px;
+}
+
+.filter.active,
+.filter.active:hover {
+  color: var(--sage-ink);
+  box-shadow: inset 0 -2px var(--sage-ink);
+}
+
+.project-body {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.project-body .project-origin {
+  grid-column: 1;
+}
+
+.project-body .contribution-title {
+  margin: 8px 0 7px;
+  padding-top: 13px;
+  border-top: 1px solid var(--sage-line);
+  color: var(--sage-ink);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.project-body .role {
+  color: var(--ink);
+}
+
+.project-body .tech {
+  margin: 14px 0 0;
+}
+
+.about {
+  background: var(--sage-wash);
+}
+
+.about .kicker,
+.about .role-label {
+  color: var(--sage-ink);
+}
+
 @media (max-width: 900px) {
   .hero-editorial {
     grid-template-columns: minmax(0, 1fr);
@@ -1212,5 +1264,11 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 
   .hero-feature {
     aspect-ratio: 1.14;
+  }
+}
+
+@media (max-width: 750px) {
+  #work.section {
+    padding-top: 40px;
   }
 }
