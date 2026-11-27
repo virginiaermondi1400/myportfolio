@@ -715,6 +715,7 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 
 .project.is-playing .visual {
   aspect-ratio: 16 / 9;
+  align-self: center;
   background: #000;
 }
 
