@@ -1236,6 +1236,12 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
   line-height: 1.85;
 }
 
+.project-body .role:not(.contribution-title + .role) {
+  margin-top: 8px;
+  padding-top: 13px;
+  border-top: 1px solid var(--sage-line);
+}
+
 .project-body .tech {
   margin: 14px 0 0;
 }
