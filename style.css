@@ -617,7 +617,6 @@ body{background:var(--bg)}.about{background:#15100d}.project{background:#19130f;
 .project-details > summary:hover { color: #ffe2bf; }
 #work { scroll-margin-top: 24px; }
 .project[id] { scroll-margin-top: 24px; }
-.video-project.is-playing .video-badge { display: none; }
 @media (prefers-reduced-motion: reduce) { .hero-image { animation: none !important; } .inline-player { animation: none !important; } }
 
 
@@ -655,9 +654,8 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 .project,.project:hover{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);align-items:center;gap:clamp(30px,5vw,78px);border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none;transform:none;padding:44px 0;overflow:visible}
 .project[hidden]{display:none}
 .project:nth-child(even) .visual{order:2}
-.project .visual,.video-project .visual{width:100%;aspect-ratio:4/3;border-radius:0;align-self:start;background:#d3c8b9;overflow:hidden}
-.project:hover .visual img,.project .visual img{filter:saturate(.72);transform:none}
-.project:hover .visual img{filter:saturate(.9)}
+.project .visual,.video-project .visual{width:100%;aspect-ratio:auto;border:0;border-radius:0;align-self:start;background:#d3c8b9;overflow:hidden}
+.project:hover .visual img,.project .visual img{height:auto;filter:none;transform:none}
 .project-body{padding:12px 0;display:grid;grid-template-columns:1fr auto;align-content:center;gap:0 12px}
 .project-body>*{grid-column:1/-1}
 .project-body .eyebrow{grid-column:1;align-self:center}
@@ -670,8 +668,10 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 .project-links{color:var(--ink);font-weight:500;margin:0;padding-top:22px}
 .project-links a,.project-links a:hover,.project-links a:focus-visible{color:var(--ink);border-color:#9c8b75}
 .work-status{border:0;border-radius:0;color:#75654e;padding:0;margin:0 0 10px}
-.play-chip,.video-badge,.video-badge.preview,.inline-close{border-radius:0;box-shadow:none;background:#302a23e6;color:#fff9ef;border:1px solid #e8dfd3}
+.play-chip,.inline-close{border-radius:0;box-shadow:none;background:#302a23e6;color:#fff9ef;border:1px solid #e8dfd3}
 .play-chip{padding:8px 13px;gap:8px}.play-icon{background:transparent;width:24px;height:24px}
+.project-body .video-badge{position:static;justify-self:start;margin:0 0 8px;padding:0;border:0;background:none;color:var(--muted);font-size:.75rem;backdrop-filter:none}
+.video-project .visual::before,.video-project .visual::after{content:none}
 .about{background:#ded7c9}.about-grid{gap:9vw}.about p,.about-manifesto,.about-education p{color:var(--ink)}
 .skill-tags span{border:0;border-bottom:1px solid #a99b87;border-radius:0;color:var(--ink);padding:5px 0;margin-right:12px}
 .contact.wrap{padding:100px 0}.contact .contact-intro,footer{color:var(--muted)}
@@ -685,10 +685,6 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 /* Cinematic Editorial — approved direction D */
 :root{--bg:#eee9df;--ink:#30271f;--muted:#65594b;--line:#c8bbaa;--accent:#766347}
 .hero-v3 h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:inherit}
-.project .visual[data-project-number]{position:relative;isolation:isolate}
-.project .visual[data-project-number]::before{content:attr(data-project-number) " /";position:absolute;top:17px;right:17px;z-index:3;color:#fff7e9;background:rgba(48,39,31,.74);padding:7px 10px;font-size:11px;letter-spacing:.16em;font-weight:500;pointer-events:none}
-.project .visual[data-project-number]::after{content:"";position:absolute;inset:auto -12% -55% auto;width:85%;aspect-ratio:1;border:1px solid rgba(238,220,186,.65);border-radius:50%;z-index:1;pointer-events:none;background:none;opacity:1}
-.project.is-playing .visual[data-project-number]::before,.project.is-playing .visual[data-project-number]::after{display:none}
 #marina .visual::before,#marina .visual::after{content:none!important}
 .project-body .summary{font-size:clamp(16px,1.5vw,19px);font-weight:500;line-height:1.55}
 .project .role{font-size:14px;line-height:1.85;max-width:65ch}
