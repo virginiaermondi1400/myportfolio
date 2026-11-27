@@ -1282,3 +1282,33 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
     line-height: 1.65;
   }
 }
+
+body {
+  --frame-gutter: clamp(24px, 4.2vw, 64px);
+  padding-block: clamp(20px, 2.4vw, 36px);
+  background: #303234 url("assets/slate-backdrop.webp") center top / 840px auto repeat;
+}
+
+.site-sheet {
+  width: min(1320px, calc(100% - var(--frame-gutter) - var(--frame-gutter)));
+  margin-inline: auto;
+  background: var(--bg);
+  box-shadow: 0 0 0 1px #11171480, 0 18px 52px #11171466;
+}
+
+@media (max-width: 750px) {
+  body {
+    --frame-gutter: 8px;
+    padding-block: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    --frame-gutter: 0px;
+  }
+
+  .site-sheet {
+    box-shadow: none;
+  }
+}

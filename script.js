@@ -8,6 +8,8 @@ function renderLang() {
   document.querySelectorAll("[data-en][data-it]").forEach((el) => {
     if (el.matches("h2")) {
       el.innerHTML = el.dataset[lang];
+    } else if (el.matches("img")) {
+      el.alt = el.dataset[lang];
     } else {
       el.textContent = el.dataset[lang];
     }
