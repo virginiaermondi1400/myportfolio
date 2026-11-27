@@ -1052,7 +1052,7 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 .hero-editorial h1 {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(3rem, 6.2vw, 6rem);
+  font-size: clamp(3rem, 6.2vw, 5.8rem);
   line-height: .91;
   letter-spacing: -.042em;
 }
@@ -1284,31 +1284,63 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 }
 
 body {
-  --frame-gutter: clamp(24px, 4.2vw, 64px);
+  --frame-gutter: clamp(28px, 6vw, 96px);
   padding-block: clamp(20px, 2.4vw, 36px);
-  background: #303234 url("assets/slate-backdrop.webp") center top / 840px auto repeat;
+  background-color: #665248;
+  background-image: linear-gradient(#89685899, #89685899), url("assets/slate-backdrop.webp");
+  background-position: center top;
+  background-size: auto, 840px auto;
 }
 
 .site-sheet {
-  width: min(1320px, calc(100% - var(--frame-gutter) - var(--frame-gutter)));
+  width: min(1240px, calc(100% - var(--frame-gutter) - var(--frame-gutter)));
   margin-inline: auto;
   background: var(--bg);
-  box-shadow: 0 0 0 1px #11171480, 0 18px 52px #11171466;
+  box-shadow: 0 0 0 1px #2f201b70, 0 18px 52px #2f201b66;
+}
+
+@media (min-width: 751px) {
+  .site-sheet .wrap {
+    width: min(1200px, calc(100% - 80px));
+  }
+
+  .project:not(.is-playing) .visual,
+  .project:not(.is-playing) .project-body {
+    align-self: end;
+  }
+
+  .project:not(.is-playing) .project-body {
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 750px) {
   body {
-    --frame-gutter: 8px;
+    --frame-gutter: 10px;
     padding-block: 8px;
   }
 }
 
 @media (max-width: 600px) {
   body {
-    --frame-gutter: 0px;
+    --frame-gutter: 6px;
+  }
+
+  .site-sheet .wrap {
+    margin-inline: max(14px, env(safe-area-inset-left)) max(14px, env(safe-area-inset-right));
   }
 
   .site-sheet {
     box-shadow: none;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    --frame-gutter: 0px;
+  }
+
+  .site-sheet .wrap {
+    margin-inline: max(20px, env(safe-area-inset-left)) max(20px, env(safe-area-inset-right));
   }
 }
