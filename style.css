@@ -680,3 +680,17 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 #marina .project-links a{color:var(--ink)}
 #marina .confidential-cover{filter:none}
 @media(max-width:750px){.wrap{width:calc(100% - 36px)}.nav{height:auto;min-height:78px;align-items:center}.nav .wordmark{font-size:23px}.nav nav a,#lang{font-size:10px;letter-spacing:.04em}.hero-v3{width:100%;min-height:620px;padding:70px 24px}.hero h1{font-size:clamp(52px,12vw,80px)}.hero-shade{background:linear-gradient(90deg,#21180fd9,#21180f66)}.section{padding:68px 0}.project,.project:hover{grid-template-columns:1fr;gap:18px;padding:28px 0}.project:nth-child(even) .visual{order:0}.project-body{padding:0 0 10px}.project-body h3{font-size:40px}.filters{gap:14px}.about-grid{gap:24px}.contact.wrap{padding:68px 0}}
+
+
+/* Cinematic Editorial — approved direction D */
+:root{--bg:#eee9df;--ink:#30271f;--muted:#65594b;--line:#c8bbaa;--accent:#766347}
+.hero-v3 h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:inherit}
+.project .visual[data-project-number]{position:relative;isolation:isolate}
+.project .visual[data-project-number]::before{content:attr(data-project-number) " /";position:absolute;top:17px;right:17px;z-index:3;color:#fff7e9;background:rgba(48,39,31,.74);padding:7px 10px;font-size:11px;letter-spacing:.16em;font-weight:500;pointer-events:none}
+.project .visual[data-project-number]::after{content:"";position:absolute;inset:auto -12% -55% auto;width:85%;aspect-ratio:1;border:1px solid rgba(238,220,186,.65);border-radius:50%;z-index:1;pointer-events:none;background:none;opacity:1}
+.project.is-playing .visual[data-project-number]::before,.project.is-playing .visual[data-project-number]::after{display:none}
+#marina .visual::before,#marina .visual::after{content:none!important}
+.project-body .summary{font-size:clamp(16px,1.5vw,19px);font-weight:500;line-height:1.55}
+.project .role{font-size:14px;line-height:1.85;max-width:65ch}
+.about-grid h2{font-style:italic}
+@media(max-width:750px){.project .role{font-size:14px;line-height:1.75}}
