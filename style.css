@@ -626,7 +626,7 @@ body{background:var(--bg)}.about{background:#15100d}.project{background:#19130f;
 body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}
 .wrap{width:min(1240px,calc(100% - 96px))}
 .nav{height:94px;border-color:var(--line)}
-.nav .wordmark{font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:-.02em}
+.nav .wordmark{font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:-.02em;color:var(--ink)}
 .nav nav a,#lang{color:var(--ink);font-size:11px;text-transform:uppercase;letter-spacing:.13em}
 .nav nav a:hover,.socials a:hover{color:#75654e}
 #lang{background:transparent;border:0;border-left:1px solid var(--line);border-radius:0}
@@ -694,3 +694,202 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 .project .role{font-size:14px;line-height:1.85;max-width:65ch}
 .about-grid h2{font-style:italic}
 @media(max-width:750px){.project .role{font-size:14px;line-height:1.75}}
+
+.hero-v3 h1 {
+  font-size: clamp(58px, 7vw, 105px);
+  max-width: 780px;
+}
+
+.hero-v3 .hero-profession {
+  margin: 0 0 12px;
+  color: #f5eee4;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+.project-body {
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+  overflow-wrap: anywhere;
+}
+
+.project-origin {
+  display: block;
+  width: auto;
+}
+
+.project.is-playing .visual {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-project .visual video {
+  margin: 0;
+  max-height: none;
+  border-radius: 0;
+}
+
+.inline-close {
+  width: 44px;
+  height: 44px;
+}
+
+@media (max-width: 750px) {
+  .wrap {
+    width: auto;
+    margin-inline: max(18px, env(safe-area-inset-left)) max(18px, env(safe-area-inset-right));
+  }
+
+  .nav {
+    display: block;
+    padding-block: max(12px, env(safe-area-inset-top)) 6px;
+  }
+
+  .nav .wordmark {
+    display: inline-flex;
+    min-height: 44px;
+    font-size: 28px;
+  }
+
+  .nav nav {
+    justify-content: space-between;
+    gap: 0 8px;
+  }
+
+  .nav nav a,
+  #lang {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 4px;
+    font-size: .75rem;
+  }
+
+  #lang {
+    display: inline-block;
+    padding-inline: 9px 4px;
+    white-space: nowrap;
+  }
+
+  .hero-v3 {
+    margin-inline: 0;
+    min-height: min(620px, 86svh);
+    justify-content: flex-end;
+    padding: 34px max(20px, env(safe-area-inset-right)) 32px max(20px, env(safe-area-inset-left));
+  }
+
+  .hero-image {
+    background-position: 62% center;
+  }
+
+  .hero-shade {
+    background: linear-gradient(0deg, #21180ff5 8%, #21180fbc 52%, #21180f29 100%);
+  }
+
+  .hero-v3 h1 {
+    font-size: clamp(2.55rem, 10.5vw, 4.75rem);
+    line-height: 1;
+    margin: 0 0 16px;
+  }
+
+  .hero-v3 h1 em {
+    display: block;
+  }
+
+  .hero .lead,
+  .project-body .summary,
+  .project .role,
+  .contact .contact-intro,
+  .side-intro {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero .lead {
+    margin: 0;
+  }
+
+  .hero-actions {
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .hero-actions a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 8px 12px;
+  }
+
+  .hero-foot {
+    margin-top: 24px;
+    gap: 8px 14px;
+  }
+
+  .section,
+  .contact.wrap {
+    padding-block: 52px;
+  }
+
+  .section h2 {
+    font-size: clamp(2.75rem, 9vw, 4.75rem);
+    line-height: 1;
+  }
+
+  .section-heading {
+    margin-bottom: 16px;
+  }
+
+  .filters {
+    gap: 0 16px;
+    margin: 0 0 24px;
+  }
+
+  .filter,
+  .filter.active,
+  .filter:hover {
+    min-height: 44px;
+    padding-block: 8px;
+    font-size: .75rem;
+  }
+
+  .project,
+  .project:hover {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-origin,
+  .project-origin.professional,
+  .project-origin.academic {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 5px;
+    font-size: .75rem;
+    line-height: 1.5;
+  }
+
+  .project-body h3 {
+    font-size: clamp(2rem, 7vw, 2.75rem);
+  }
+
+  .project-links {
+    padding-top: 10px;
+  }
+
+  .project-links a,
+  .contact-method {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding-block: 7px;
+    font-size: .875rem;
+  }
+
+  footer {
+    padding-bottom: max(30px, env(safe-area-inset-bottom));
+  }
+}

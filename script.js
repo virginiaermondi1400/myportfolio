@@ -13,6 +13,14 @@ function renderLang() {
     }
   });
   langButton.innerHTML = lang === "en" ? "IT / <b>EN</b>" : "<b>IT</b> / EN";
+  langButton.setAttribute("aria-label", lang === "en" ? "Passa all’italiano" : "Switch to English");
+  document.querySelector(".nav nav").setAttribute("aria-label", lang === "en" ? "Main navigation" : "Navigazione principale");
+  document.querySelector(".filters").setAttribute("aria-label", lang === "en" ? "Filter projects" : "Filtra i progetti");
+  document.querySelectorAll(".video-project").forEach((card) => {
+    const title = card.querySelector("h3").textContent;
+    card.querySelector(".visual-trigger").setAttribute("aria-label", lang === "en" ? `Play video: ${title}` : `Guarda il video: ${title}`);
+    card.querySelector(".inline-close").setAttribute("aria-label", lang === "en" ? "Close video" : "Chiudi il video");
+  });
 }
 
 langButton.addEventListener("click", () => {
@@ -25,9 +33,14 @@ renderLang();
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
-document.querySelectorAll(".filter").forEach((button) => {
+const filters = document.querySelectorAll(".filter");
+filters.forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".filter").forEach((b) => b.classList.toggle("active", b === button));
+    filters.forEach((filter) => {
+      const selected = filter === button;
+      filter.classList.toggle("active", selected);
+      filter.setAttribute("aria-pressed", String(selected));
+    });
     document.querySelectorAll(".project").forEach((card) => {
       card.hidden = button.dataset.filter !== "all" && !card.dataset.cat.includes(button.dataset.filter);
       if (card.hidden) stopInlineVideo(card);
@@ -70,11 +83,12 @@ function startInlineVideo(card) {
   video.preload = "metadata";
   video.src = source;
   video.setAttribute("controlsList", "nodownload");
-  video.setAttribute("aria-label", `${card.querySelector("h3")?.textContent || "Project"} video`);
+  video.setAttribute("aria-label", card.querySelector("h3").textContent);
 
   visual.appendChild(video);
   card.classList.add("is-playing");
-  visual.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  visual.scrollIntoView({ block: "nearest" });
+  card.querySelector(".inline-close").focus({ preventScroll: true });
   video.play().catch(() => {});
 }
 
@@ -85,6 +99,7 @@ document.querySelectorAll(".video-project").forEach((card) => {
   close?.addEventListener("click", (event) => {
     event.stopPropagation();
     stopInlineVideo(card);
+    trigger?.focus({ preventScroll: true });
   });
 });
 
