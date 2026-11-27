@@ -670,7 +670,6 @@ h1,h2,h3,.section h2,.contact h2{font-family:var(--serif);font-weight:400;letter
 .work-status{border:0;border-radius:0;color:#75654e;padding:0;margin:0 0 10px}
 .play-chip,.inline-close{border-radius:0;box-shadow:none;background:#302a23e6;color:#fff9ef;border:1px solid #e8dfd3}
 .play-chip{padding:8px 13px;gap:8px}.play-icon{background:transparent;width:24px;height:24px}
-.project-body .video-badge{position:static;justify-self:start;margin:0 0 8px;padding:0;border:0;background:none;color:var(--muted);font-size:.75rem;backdrop-filter:none}
 .video-project .visual::before,.video-project .visual::after{content:none}
 .about{background:#ded7c9}.about-grid{gap:9vw}.about p,.about-manifesto,.about-education p{color:var(--ink)}
 .skill-tags span{border:0;border-bottom:1px solid #a99b87;border-radius:0;color:var(--ink);padding:5px 0;margin-right:12px}
